@@ -59,5 +59,3 @@ Hanoi.prototype.run = function () {
 
 const game = new Hanoi;
 game.run();
-// reader.close();
-// reader.close();
