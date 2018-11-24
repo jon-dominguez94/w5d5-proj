@@ -17,9 +17,6 @@ class Hanoi {
 Hanoi.prototype.printStacks = function () {
   let output = "";
   for (let i = this.discs; i >= 0; i--) {
-    // tower.forEach((disk) => {
-
-    // });
     output = "";
     this.towers.forEach((tower) => {
       output = "";
