@@ -37,7 +37,17 @@ Hanoi.prototype.printStacks = function () {
 };
 
 Hanoi.prototype.promptMove = function () {
+  let fromTower;
+  let toTower;
 
+  reader.question("Which tower to take from: ", function (numStr) {
+   fromTower = parseInt(numStr);
+  });
+  reader.question("Which tower to move to: ", function (numStr) {
+   toTower = parseInt(numStr);
+  });
+
+  return [fromTower, toTower];
 };
 
 Hanoi.prototype.run = function () {
