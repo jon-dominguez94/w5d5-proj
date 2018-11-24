@@ -19,3 +19,8 @@ function addNumbers(sum, numsLeft, completionCallback) {
     completionCallback(sum);
   }
 }
+
+addNumbers(0, 3, function (sum) {
+  console.log("Total Sum: " + sum);
+  reader.close();
+});
