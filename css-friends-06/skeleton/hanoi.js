@@ -1,3 +1,10 @@
+const readline = require("readline");
+
+const reader = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 class Hanoi {
 
   constructor() {
@@ -11,7 +18,7 @@ Hanoi.prototype.printStacks() {
 }
 
 Hanoi.prototype.promptMove() {
-  
+
 }
 
 Hanoi.prototype.run = function () {
