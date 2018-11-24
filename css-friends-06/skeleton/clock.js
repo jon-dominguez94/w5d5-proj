@@ -18,8 +18,6 @@ class Clock {
   printTime() {
     // Format the time in HH:MM:SS
     // Use console.log to print it.
-    const output = [this.hours, this.minutes, this.seconds].join(":");
-    console.log(output);
   }
 
   _tick() {
