@@ -36,25 +36,28 @@ Hanoi.prototype.printStacks = function () {
   console.log(underline);
 };
 
-Hanoi.prototype.promptMove = function () {
-  let fromTower;
-  let toTower;
-
-  reader.question("Which tower to take from: ", function (numStr) {
-   fromTower = parseInt(numStr);
-  });
-  reader.question("Which tower to move to: ", function (numStr) {
-   toTower = parseInt(numStr);
-  });
-
-  return [fromTower, toTower];
+Hanoi.prototype.promptMove = function (answers, ending, times, completionCallback) {
+  const that = this;
+  if (times > 0) {
+    reader.question(`Which tower to ${ending}: `, function (numStr) {
+      const tower = parseInt(numStr);
+      answers.push(tower);
+      that.promptMove(answers, "move to", times - 1, completionCallback);
+    });
+  } else {
+    completionCallback(answers);
+  }
 };
 
 Hanoi.prototype.run = function () {
   this.printStacks();
-  // Hanoi.promptMove();
+  this.promptMove([], "take from", 2, (answers) => {
+    console.log(answers);
+    reader.close();
+  });
 };
 
 const game = new Hanoi;
 game.run();
-reader.close();
+// reader.close();
+// reader.close();
