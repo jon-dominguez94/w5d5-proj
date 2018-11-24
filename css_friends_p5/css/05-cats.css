@@ -18,3 +18,9 @@
   color: #fff;
   text-shadow: #000 0 0 10px;
 }
+
+.content-header-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
