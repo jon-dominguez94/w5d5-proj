@@ -30,3 +30,7 @@
   border-radius: 5px;
   font-weight: bold;
 }
+
+.content-header-btn:hover {
+  background: #eee;
+}
