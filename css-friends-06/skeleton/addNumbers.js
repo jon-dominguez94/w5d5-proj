@@ -5,3 +5,17 @@ const reader = readline.createInterface({
   output: process.stdout;
 });
 
+function addNumbers(sum, numsLeft, completionCallback) {
+  if (numsLeft > 0) {
+    reader.question("Enter a num: ", function (numStr) {
+      const thisNumber = parseInt(numStr);
+
+      sum += thisNumber;
+      console.log("Current sum: " + sum);
+
+      addNumbers(sum, numsLeft - 1, completionCallback);
+    });
+  } else {
+    completionCallback(sum);
+  }
+}
